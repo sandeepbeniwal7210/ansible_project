@@ -1,0 +1,15 @@
+---
+- name: loop
+  hosts: all
+  remote_user: ec2-user
+
+  vars:
+     pkg:
+       - httpd
+       - php
+
+  tasks:
+  - name: install httpd
+    yum: name={{item}} state=absent
+
+    with_items: "{{pkg}}"

@@ -1,0 +1,9 @@
+---
+- name: install
+  yum: name={{var1}} state=latest
+  notify:
+      - restart httpd
+
+- name: service start httpd
+  service: name={{var1}} state=started
+

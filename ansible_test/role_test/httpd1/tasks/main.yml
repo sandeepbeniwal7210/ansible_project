@@ -1,0 +1,12 @@
+---
+- name: install httpd
+  yum: name={{var1}} state=latest
+
+- name: service start httpd
+  service: name={{var1}} state=started
+
+- name: service stop httpd
+  service: name={{var1}} state=stopped
+
+- name: remove httpd
+  yum: name={{var1}} state=absent

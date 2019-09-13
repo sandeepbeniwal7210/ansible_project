@@ -1,0 +1,5 @@
+- name: install 
+  yum: name={{var1}} state=latest
+
+- name: install 
+  yum: name={{var2}} state=latest

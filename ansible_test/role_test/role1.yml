@@ -1,0 +1,7 @@
+---
+- name: role httpd
+  hosts: all
+  remote_user: ec2-user
+
+  roles:
+     - httpd1

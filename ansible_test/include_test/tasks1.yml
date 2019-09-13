@@ -1,0 +1,5 @@
+- name: remove httpd
+  yum: name={{var1}} state=absent
+
+- name: remove php
+  yum: name={{var2}} state=absent

@@ -1,0 +1,10 @@
+---
+- name: install httpd
+  hosts: all
+  remote_user: ec2-user
+
+  strategy: linear
+
+  tasks:
+  - name: install httpd
+    yum: name=httpd state=latest

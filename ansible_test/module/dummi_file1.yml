@@ -1,0 +1,8 @@
+---
+- name: create a file
+  hosts: all
+  remote_user: ec2-user
+
+  tasks:
+  - name: create a file
+    file: dest=/tmp/ummi.txt state=touch

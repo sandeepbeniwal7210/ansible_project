@@ -1,0 +1,14 @@
+---
+- name: install
+  hosts: all
+  remote_user: ec2-user
+
+  vars_files:
+           - variable.yml
+
+  tasks:
+  - name: install
+    yum: name={{var1}} state=latest
+
+  - name: install php
+    yum: name={{var2}} state=latest 

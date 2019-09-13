@@ -1,0 +1,20 @@
+---
+- name: create a file
+  hosts: all
+  remote_user: ec2-user
+
+  vars: 
+     service: httpd
+
+  tasks:
+  - name: install httpd
+    yum: name={{service}} state=latest
+
+  - name: service start
+    service: name={{service}} state=started
+
+  - name: service stop
+    service: name={{service}} state=stopped
+
+  - name: remove httpd
+    yum: name={{service}} state=absent

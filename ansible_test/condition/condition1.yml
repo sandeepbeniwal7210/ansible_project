@@ -1,0 +1,16 @@
+---
+- name: create a file
+  hosts: all
+  remote_user: ec2-user
+
+  vars:
+     pkg: 
+       - httpd
+       - apache2
+
+  tasks:
+  - name: install pkg
+    yum: name={{pkg}} state=latest
+
+  - name: start
+    service: name={{pkg}} state=started

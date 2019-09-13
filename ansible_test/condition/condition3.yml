@@ -1,0 +1,12 @@
+---
+- name: create file
+  hosts: all
+  remote_user: ec2-user
+
+  vars:
+     age: 19
+
+  tasks:
+  - name: create file
+    command: touch /tmp/dummi.tx
+    when: age == 18

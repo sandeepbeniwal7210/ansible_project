@@ -1,0 +1,15 @@
+---
+- name: create a file
+  hosts: all
+  remote_user: ec2-user
+
+  vars:
+     age: 18
+
+  tasks:
+  - name: create a file
+    command: touch /tmp/file.txt
+    when: age == 18
+
+  - name: remove file
+    file: dest=/tmp/file.txt state=absent

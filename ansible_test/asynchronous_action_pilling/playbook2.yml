@@ -1,0 +1,13 @@
+---
+- name: create file
+  hosts: all
+  remote_user: ec2-user
+
+  tasks:
+  - name: sleep for 120 second
+    command: sleep 120
+    async: 60
+    poll: 0
+
+  - name: second task
+    command: touch /tmp/sandeep.txt

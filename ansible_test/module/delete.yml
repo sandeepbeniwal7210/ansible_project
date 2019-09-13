@@ -1,0 +1,10 @@
+---
+- name: remove file
+  hosts: all
+  remote_user: ec2-user
+
+  tasks:
+  - name: remove
+    file: dest=/tmp/ummi.txt state=absent
+  - name: remove    
+    file: dest=/tmp/dummi.txt state=absent
